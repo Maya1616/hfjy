@@ -167,6 +167,8 @@
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
@@ -175,38 +177,8 @@
             box-shadow: 0 6px 20px rgba(125, 211, 252, 0.4);
         }
         
-        /* --- About Section --- */
-        #about .about-content {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-        }
-        #about .about-text {
-            flex: 1;
-        }
+        /* --- About & Skills Sections styling remains the same --- */
         
-        /* --- Skills Section --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 1.5rem;
-            text-align: center;
-        }
-
-        .skill-card {
-            background: var(--card-color);
-            padding: 2rem 1rem;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            font-weight: 500;
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
         /* --- Projects Section --- */
         .project-grid {
             display: grid;
@@ -220,6 +192,7 @@
             border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 1.5rem;
         }
         
         .project-card:hover {
@@ -227,17 +200,13 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-content h3 {
+        .project-card h3 {
             font-size: 1.5rem;
             color: var(--primary-text);
             margin-bottom: 0.5rem;
         }
 
-        .project-content p {
+        .project-card p {
             color: var(--secondary-text);
             margin-bottom: 1rem;
         }
@@ -247,11 +216,11 @@
             font-weight: 500;
             text-decoration: none;
         }
-        
+
         /* --- Contact Section --- */
         #contact .container {
             text-align: center;
-            max-width: 600px;
+            max-width: 700px;
         }
         
         #contact p {
@@ -260,26 +229,36 @@
             margin-bottom: 2.5rem;
         }
         
-        .social-links {
-            margin-top: 2rem;
+        .contact-form {
+            margin-top: 3rem;
         }
         
-        .social-links a {
-            margin: 0 1rem;
-            display: inline-block;
-            transition: transform 0.3s ease;
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
         }
-        .social-links a:hover {
-            transform: scale(1.2);
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--card-color);
+            color: var(--primary-text);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
         }
-        .social-links svg {
-            width: 28px;
-            height: 28px;
-            fill: var(--secondary-text);
-            transition: fill 0.3s ease;
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
         }
-        .social-links a:hover svg {
-            fill: var(--accent-color);
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
         }
 
         /* --- Footer --- */
@@ -300,151 +279,4 @@
             .nav-item { margin: 0 1rem; }
             #hero { height: auto; padding: 4rem 0; }
         }
-    </style>
-</head>
-<body>
-
-    <header class="header">
-        <nav class="navbar container">
-            <a href="#" class="nav-logo">Maya Shankar</a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero">
-            <div class="hero-content">
-                <h1>I'm Maya Shankar, a <span class="typing-text"></span></h1>
-                <p>
-                    A dedicated and passionate learner, currently exploring the fascinating worlds of Computer Applications, Data Science, and Machine Learning.
-                </p>
-                <a href="#contact" class="btn">Connect With Me</a>
-            </div>
-        </section>
-
-        <section id="about" class="container">
-            <h2><span>About</span> Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Hello! I am currently on a journey to become a proficient tech professional. My core interest lies in developing smart solutions that can make a difference. I am pursuing a Bachelor of Computer Applications (BCA) to build a strong foundation, while simultaneously diving deep into Data Science and Machine Learning concepts. I believe in learning by doing and am constantly working on projects to apply my knowledge.
-                    </p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="skills" class="container">
-            <h2>My <span>Skills</span></h2>
-            <div class="skills-grid">
-                <div class="skill-card">HTML</div>
-                <div class="skill-card">CSS</div>
-                <div class="skill-card">JavaScript</div>
-                <div class="skill-card">Python</div>
-                <div class="skill-card">SQL</div>
-                <div class="skill-card">Data Analysis</div>
-                <div class="skill-card">Machine Learning</div>
-                <div class="skill-card">C/C++</div>
-            </div>
-        </section>
-
-        <section id="projects" class="container">
-            <h2>My <span>Projects</span></h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Project One Title</h3>
-                        <p>A detailed description of your project. What problem does it solve? What technologies did you use? For example: "A sentiment analysis tool using Python and NLTK to classify movie reviews."</p>
-                        <a href="#" class="project-link">View on GitHub &rarr;</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Project Two Title</h3>
-                        <p>A detailed description of your project. For example: "A responsive portfolio website built from scratch using modern HTML, CSS, and JavaScript."</p>
-                        <a href="#" class="project-link">View on GitHub &rarr;</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Project Three Title</h3>
-                        <p>A detailed description of your project. For example: "A simple e-commerce site frontend concept with a shopping cart functionality."</p>
-                        <a href="#" class="project-link">View on GitHub &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contact" class="container">
-            <h2><span>Contact</span> Me</h2>
-            <p>I'd love to hear from you! Whether you have a question or just want to connect, feel free to reach out.</p>
-            <a href="mailto:your-email@example.com" class="btn">Say Hello</a>
-            <div class="social-links">
-                <a href="#" target="_blank">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                </a>
-                <a href="#" target="_blank">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Maya Shankar. Crafted with passion.</p>
-    </footer>
-
-    <script>
-        // --- Typing Effect ---
-        const typingText = document.querySelector('.typing-text');
-        // नीचे दी गई लिस्ट में आप अपनी स्किल्स लिख सकते हैं
-        const words = ["a Developer", "a Data Enthusiast", "a Lifelong Learner"];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function type() {
-            const currentWord = words[wordIndex];
-            const currentChar = currentWord.substring(0, charIndex);
-            typingText.textContent = currentChar;
-
-            if (!isDeleting && charIndex < currentWord.length) {
-                charIndex++;
-                setTimeout(type, 100);
-            } else if (isDeleting && charIndex > 0) {
-                charIndex--;
-                setTimeout(type, 50);
-            } else {
-                isDeleting = !isDeleting;
-                if (!isDeleting) {
-                    wordIndex = (wordIndex + 1) % words.length;
-                }
-                setTimeout(type, 1200);
-            }
-        }
-        
-        // --- Scroll Animation ---
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        const sections = document.querySelectorAll('section');
-        sections.forEach((section) => observer.observe(section));
-        
-        // Start typing effect when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-             setTimeout(type, 1000); // Start after a short delay
-        });
-    </script>
-</body>
-</html>
+    </style
